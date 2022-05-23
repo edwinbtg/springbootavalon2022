@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+    
+    <body>
+        <table>
+            <tr>               
+                <th><a th:href="@{orden(campo=dni)}">Dni</a></th>
+                <th><a th:href="@{orden(campo=nombre)}">Nombre</a></th>
+                <th><a th:href="@{orden(campo=apellidos)}">Apellidos</a></th>
+                <th>Borrar</th>
+                <th>Detalle</th>
+                <th>Editar</th>
+            </tr>
+            <tr th:each="persona:${lista}"><!--Es un foreach en lenguaje thymeleaf, persona es el tipo de objeto-->
+
+                <td th:text="${persona.dni}"></td>
+                <td th:text="${persona.nombre}"></td>
+                <td th:text="${persona.apellidos}"></td>
+                <td><a th:href="@{borrar(dni=${persona.dni})}">borrar</a></td>
+                <td><a th:href="@{detalle(dni=${persona.dni})}">detalle</a></td>
+                <td><a th:href="@{editar(dni=${persona.dni})}">editar</a></td>
+
+            </tr>
+        </table>
+        <form action="nueva" method="POST"><!--El POST se refiere a @PostMapping-->
+            <input type="submit" value="nueva"/><!--nueva se refiere al nueva del metodo de PersonasController-->
+        </form>
+    </body>
+</html>

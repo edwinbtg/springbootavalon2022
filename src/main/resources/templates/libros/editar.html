@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <form method="POST" th:object="${libro}" action="salvar">
+            <p>ISBN:<input type="text" th:field="*{isbn}"/></p>
+            <p>Titulo:<input type="text" th:field="*{titulo}"/></p>
+            <p>Autor:<input type="text" th:field="*{autor}"/></p>
+            <p><input type="submit"/></p><!--al presionar submit desata la accion de "salvar que se indica arriba"--> 
+        </form>
+    </body>
+</html>
