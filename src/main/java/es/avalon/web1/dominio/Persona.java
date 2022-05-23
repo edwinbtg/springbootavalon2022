@@ -1,5 +1,6 @@
 package es.avalon.web1.dominio;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Persona {
     private String nombre;
     private int edad;
 
+    @JsonIgnore //Le pedimos que ignore la relacion por JSON
     @OneToMany(mappedBy = "persona")
     private final List<Libro> libros = new ArrayList<>();
 

@@ -1,0 +1,26 @@
+
+
+
+<html xmlns:th="http://www.thymeleaf.org"> <!--Con esto podemos añadir partes de la libreria thymeleaf-->
+    <body>
+        
+        <table>
+            <th>ISBN</th>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <tr th:each="libro:${lista}">
+                <td th:text="${libro.isbn}"></td>
+                <td th:text="${libro.titulo}"></td>
+                <td th:text="${libro.autor}"></td>
+                <td><a th:href="@{borrar(isbn=${libro.isbn})}">borrar</a></td>
+                <td><a th:href="@{detalle(isbn=${libro.isbn})}">Ver a detalle</a></td>
+                <td><a th:href="@{editar(isbn=${libro.isbn})}">Editar</a></td>
+            </tr>
+        </table>
+
+        <form action="nueva" method="POST">
+            <input type="submit" value="Ingresar Libro">
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,14 @@
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        
+        <form action="salvar" th:object="${libro}" method="POST">
+            <p>ISBN: <input type="text" th:field="*{isbn}" readonly></p>
+            <p>Titulo: <input type="text" th:field="*{titulo}"></p>
+            <p>Autor: <input type="text" th:field="*{autor}"></p>
+            <p><input type="submit" value="Editar Libro"></p>
+        </form>
+
+    </body>
+</html>
