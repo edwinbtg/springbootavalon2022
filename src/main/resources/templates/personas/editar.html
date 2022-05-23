@@ -1,0 +1,12 @@
+<html>
+    <body>
+
+        <form method="post" th:object="${persona}" action="salvar">
+           <p> Dni:<input type="text" th:field="*{dni}" readonly/></p>
+            <p>Nombre:<input type="text" th:field="*{nombre}"/></p>
+           <p> Edad:<input type="text"th:field="*{edad}"/></p>
+            <p><input type="submit"/></p>
+
+        </form>
+    </body>
+</html>

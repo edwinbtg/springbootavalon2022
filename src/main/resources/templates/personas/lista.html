@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <table>
+            <tr>
+                <th><a th:href="@{/personas/lista/orden(campo=dni)}">Dni</a></th>
+                <th><a th:href="@{/personas/lista/orden(campo=nombre)}">Nombre</a></th>
+                <th><a th:href="@{/personas/lista/orden(campo=edad)}">Edad</a></th>
+                <th>Borrar</th>
+                <th>Detalle</th>
+                <th>Editar</th>
+            </tr>
+            <tr th:each="persona:${lista}">
+
+                <td th:text="${persona.dni}"></td>
+                <td th:text="${persona.nombre}"></td>
+                <td th:text="${persona.edad}"></td>
+                <td><a th:href="@{/personas/borrar(dni=${persona.dni})}">borrar</a></td>
+                <td><a th:href="@{/personas/detalle(dni=${persona.dni})}">detalle</a></td>
+                <td><a th:href="@{/personas/editar(dni=${persona.dni})}">editar</a></td>
+            </tr>
+        </table>
+        <form action="nueva" method="POST">
+            <input type="submit" value="nueva"/>
+        </form>
+    </body>
+</html>
