@@ -1,0 +1,13 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<form action="salvar" th:object="${persona}" method="POST">
+    <p>DNI: <input type="text" th:field="*{dni}" readonly></p>
+    <p>Nombre: <input type="text" th:field="*{nombre}"></p>
+    <p>Edad: <input type="number" th:field="*{edad}"></p>
+    <p><input type="submit" value="Editar persona"></p>
+</form>
+
+</body>
+</html>
