@@ -17,7 +17,7 @@ public class LibroPersonaService {
     @Autowired
     private PersonaRepository repoPersona;
 
-    public Object buscarTodasPersonas(){
+    public List<Persona> buscarTodasPersonas(){
 
         return repoPersona.buscarTodo();
     }
