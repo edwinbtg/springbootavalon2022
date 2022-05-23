@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <body>
+        <table>
+            <tr th:each="persona:${lista}">
+                <td th:text="${persona.dni}"></td>
+                <td th:text="${persona.nombre}"></td>
+                <td th:text="${persona.apellido}"></td>
+                <td><a th:href="@{borrar(dni=${persona.dni})}">Borrar</a></td>
+                <td><a th:href="@{detalle(dni=${persona.dni})}">Detalle</a></td>
+                <td><a th:href="@{editar(dni=${persona.dni})}">Editar</a></td>
+            </tr>
+        </table>
+        <form action="nueva" method="post">
+            <input type="submit" value="insertar">
+        </form>
+    </body>
+</html>

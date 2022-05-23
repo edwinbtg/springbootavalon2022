@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+
+        <form method="post" th:object="${persona}" action="guardar">
+            <p>Dni:<input type="text" th:field="*{dni}" readonly/></p>
+            <p>Nombre:<input type="text" th:field="*{nombre}"/></p>
+            <p>Apellido:<input type="text"th:field="*{apellido}"/></p>
+            <p><input type="submit"/></p>
+
+        </form>
+    </body>
+</html>
