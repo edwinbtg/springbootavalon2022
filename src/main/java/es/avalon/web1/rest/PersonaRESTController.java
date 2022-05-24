@@ -25,4 +25,8 @@ public class PersonaRESTController {
         servicio.insertarPersona(p);
 
     }
+    @DeleteMapping("/{dni}")
+    public void borrar(@PathVariable String dni){
+        servicio.borrarPersona(new Persona(dni));
+    }
 }
